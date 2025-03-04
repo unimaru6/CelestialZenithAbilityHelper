@@ -13,16 +13,19 @@
 ・メインツリーはコメントで
     // Shadow ------
     ------------
-と囲まれている部分で確認できます
+ と囲まれている部分で確認できます
 ・tierは以下のように設定してください:
     0 : 必ず取りたい
     1 : 0のabilityのtreeを所持していなかったら取りたい or 欲しいが必須ではない
     2 : 欲しいが必須ではない 1より下ランク
     3 : とっても取らなくても影響なし
     5 : 取りたくない
+    10 : スキルツリーのトリガーのスキルが存在しない
     〇 ここで、tierにはtier4は設定しないでください 〇
 ・同じtierの場合、メインアビリティ(Right,SneakBow,Lifelineなど)のほうがPassiveアビリティより優先されます
 (優先順位 : main tier0 > passive tier0 > main tier1 > passive tier1)
+・メインツリーにtier0のメインアビリティがある場合は、他のすべてのツリーの対応するトリガーのtierを5にしてもよいですが、
+ 他のツリーにtier0のメインアビリティがある場合は、tierを3以上にしてください
 
 
 
@@ -176,10 +179,10 @@ const treePriority = {
     "Frostborn": {
 
         "Dawnbringer": {
-            "Combo": { "ability": "Soothing Combos", "tier": 5 },
-            "Right": { "ability": "Ward of Light", "tier": 5 },
-            "Sneak Left": { "ability": "Radiant Blessing", "tier": 1 },
-            "Sneak Right": { "ability": "Bottled Sunlight", "tier": 5 },
+            "Combo": { "ability": "Soothing Combos", "tier": 3 },
+            "Right": { "ability": "Ward of Light", "tier": 1 },
+            "Sneak Left": { "ability": "Radiant Blessing", "tier": 5 },
+            "Sneak Right": { "ability": "Bottled Sunlight", "tier": 1 },
             "Spawner Break": { "ability": "Sundrops", "tier": 3 },
             "Sneak Bow": { "ability": "Divine Beam", "tier": 2 },
             "Swap": { "ability": "Spark of Inspiration", "tier": 5 },
@@ -191,10 +194,10 @@ const treePriority = {
             ]
         },
         "Earthbound": {
-            "Combo": { "ability": "Earthen Combos", "tier": 5 },
-            "Right": { "ability": "Crushing Earth", "tier": 5 },
-            "Sneak Left": { "ability": "Taunt", "tier": 0 },
-            "Sneak Right": { "ability": "Iron Grip", "tier": 5 },
+            "Combo": { "ability": "Earthen Combos", "tier": 3 },
+            "Right": { "ability": "Crushing Earth", "tier": 3 },
+            "Sneak Left": { "ability": "Taunt", "tier": 5 },
+            "Sneak Right": { "ability": "Iron Grip", "tier": 2 },
             "Spawner Break": { "ability": "Entrench", "tier": 3 },
             "Sneak Bow": { "ability": "Earthquake", "tier": 3 },
             "Swap": { "ability": "Earthen Wrath", "tier": 5 },
@@ -206,55 +209,55 @@ const treePriority = {
             ]
         },
         "Flamecaller": {
-            "Combo": { "ability": "Volcanic Combos", "tier": 5 },
-            "Right": { "ability": "Fireball", "tier": 5 },
-            "Sneak Left": { "ability": "Igneous Rune", "tier": 3 },
-            "Sneak Right": { "ability": "Flamestrike", "tier": 5 },
+            "Combo": { "ability": "Volcanic Combos", "tier": 3 },
+            "Right": { "ability": "Fireball", "tier": 3 },
+            "Sneak Left": { "ability": "Igneous Rune", "tier": 5 },
+            "Sneak Right": { "ability": "Flamestrike", "tier": 3 },
             "Spawner Break": { "ability": "Flame Spirit", "tier": 3 },
             "Sneak Bow": { "ability": "Pyroblast", "tier": 3 },
             "Swap": { "ability": "Volcanic Meteor", "tier": 5 },
-            "Lifeline": { "ability": "Apocalypse", "tier": 2 },
+            "Lifeline": { "ability": "Apocalypse", "tier": 3 },
             "Passive": [
-                { "ability": "Detonation", "tier": 3 },
-                { "ability": "Primordial Mastery", "tier": 3 },
+                { "ability": "Detonation", "tier": 1 },
+                { "ability": "Primordial Mastery", "tier": 1 },
                 { "ability": "Pyromania", "tier": 3 }
             ]
         },
         "Frostborn": {
-            "Combo": { "ability": "Frigid Combos", "tier": 5 },
-            "Right": { "ability": "Ice Lance", "tier": 5 },
-            "Sneak Left": { "ability": "Snowstorm", "tier": 3 },
-            "Sneak Right": { "ability": "Ice Barrier", "tier": 5 },
+            "Combo": { "ability": "Frigid Combos", "tier": 3 },
+            "Right": { "ability": "Ice Lance", "tier": 3 },
+            "Sneak Left": { "ability": "Snowstorm", "tier": 0 },
+            "Sneak Right": { "ability": "Ice Barrier", "tier": 3 },
             "Spawner Break": { "ability": "Permafrost", "tier": 3 },
             "Sneak Bow": { "ability": "Piercing Cold", "tier": 3 },
-            "Swap": { "ability": "Avalanche", "tier": 5 },
-            "Lifeline": { "ability": "Cryobox", "tier": 3 },
+            "Swap": { "ability": "Avalanche", "tier": 0 },
+            "Lifeline": { "ability": "Cryobox", "tier": 5 },
             "Passive": [
-                { "ability": "Frozen Domain", "tier": 2 },
+                { "ability": "Frozen Domain", "tier": 1 },
                 { "ability": "Icebreaker", "tier": 0 }
             ]
         },
         "Shadowdancer": {
-            "Combo": { "ability": "Dark Combos", "tier": 0 },
-            "Right": { "ability": "Advancing Shadows", "tier": 0 },
+            "Combo": { "ability": "Dark Combos", "tier": 3 },
+            "Right": { "ability": "Advancing Shadows", "tier": 3 },
             "Sneak Left": { "ability": "Cloak of Shadows", "tier": 5 },
-            "Sneak Right": { "ability": "Blade Flurry", "tier": 0 },
-            "Spawner Break": { "ability": "Phantom Force", "tier": 5 },
-            "Sneak Bow": { "ability": "Dummy Decoy", "tier": 5 },
-            "Swap": { "ability": "Chaos Dagger", "tier": 0 },
-            "Lifeline": { "ability": "Escape Artist", "tier": 5 },
+            "Sneak Right": { "ability": "Blade Flurry", "tier": 3 },
+            "Spawner Break": { "ability": "Phantom Force", "tier": 3 },
+            "Sneak Bow": { "ability": "Dummy Decoy", "tier": 3 },
+            "Swap": { "ability": "Chaos Dagger", "tier": 5 },
+            "Lifeline": { "ability": "Escape Artist", "tier": 3 },
             "Passive": [
-                { "ability": "Brutalize", "tier": 0 },
-                { "ability": "Deadly Strike", "tier": 0 },
-                { "ability": "Dethroner", "tier": 0 },
+                { "ability": "Brutalize", "tier": 3 },
+                { "ability": "Deadly Strike", "tier": 3 },
+                { "ability": "Dethroner", "tier": 1 },
                 { "ability": "Shadow Slam", "tier": 3 }
             ]
         },
         "Steelsage": {
-            "Combo": { "ability": "Focused Combos", "tier": 5 },
-            "Right": { "ability": "Sidearm", "tier": 5 },
-            "Sneak Left": { "ability": "Scrapshot", "tier": 3 },
-            "Sneak Right": { "ability": "Firework Blast", "tier": 5 },
+            "Combo": { "ability": "Focused Combos", "tier": 3 },
+            "Right": { "ability": "Sidearm", "tier": 3 },
+            "Sneak Left": { "ability": "Scrapshot", "tier": 5 },
+            "Sneak Right": { "ability": "Firework Blast", "tier": 3 },
             "Spawner Break": { "ability": "Precision Strike", "tier": 3 },
             "Sneak Bow": { "ability": "Volley", "tier": 3 },
             "Swap": { "ability": "Gravity Bomb", "tier": 5 },
@@ -266,16 +269,16 @@ const treePriority = {
             ]
         },
         "Windwalker": {
-            "Combo": { "ability": "Windswept Combos", "tier": 5 },
-            "Right": { "ability": "Wind Walk", "tier": 5 },
-            "Sneak Left": { "ability": "Guarding Bolt", "tier": 3 },
-            "Sneak Right": { "ability": "Aeroblast", "tier": 5 },
-            "Spawner Break": { "ability": "Whirlwind", "tier": 2 },
+            "Combo": { "ability": "Windswept Combos", "tier": 3 },
+            "Right": { "ability": "Wind Walk", "tier": 1 },
+            "Sneak Left": { "ability": "Guarding Bolt", "tier": 5 },
+            "Sneak Right": { "ability": "Aeroblast", "tier": 3 },
+            "Spawner Break": { "ability": "Whirlwind", "tier": 3 },
             "Sneak Bow": { "ability": "Skyhook", "tier": 0 },
-            "Swap": { "ability": "Thundercloud Form", "tier": 5 },
+            "Swap": { "ability": "Thundercloud Form", "tier": 3 },
             "Lifeline": { "ability": "Last Breath", "tier": 0 },
             "Passive": [
-                { "ability": "Aeromancy", "tier": 0 },
+                { "ability": "Aeromancy", "tier": 2 },
                 { "ability": "Dodging", "tier": 1 },
                 { "ability": "One with the Wind", "tier": 3 },
                 { "ability": "Restoring Draft", "tier": 2 }
@@ -283,9 +286,9 @@ const treePriority = {
         },
         "Prismatic": {
             "Combo": { "ability": "", "tier": 10 },
-            "Right": { "ability": "Solar Ray", "tier": 5 },
-            "Sneak Left": { "ability": "Encore", "tier": 3 },
-            "Sneak Right": { "ability": "Chroma Blade", "tier": 5 },
+            "Right": { "ability": "Solar Ray", "tier": 3 },
+            "Sneak Left": { "ability": "Encore", "tier": 5 },
+            "Sneak Right": { "ability": "Chroma Blade", "tier": 3 },
             "Spawner Break": { "ability": "Convergence", "tier": 3 },
             "Sneak Bow": { "ability": "Disco Ball", "tier": 3 },
             "Swap": [
@@ -457,12 +460,12 @@ const treePriority = {
 
         "Dawnbringer": {
             "Combo": { "ability": "Soothing Combos", "tier": 5 },
-            "Right": { "ability": "Ward of Light", "tier": 5 },
-            "Sneak Left": { "ability": "Radiant Blessing", "tier": 1 },
+            "Right": { "ability": "Ward of Light", "tier": 0 },
+            "Sneak Left": { "ability": "Radiant Blessing", "tier": 0 },
             "Sneak Right": { "ability": "Bottled Sunlight", "tier": 5 },
-            "Spawner Break": { "ability": "Sundrops", "tier": 3 },
-            "Sneak Bow": { "ability": "Divine Beam", "tier": 2 },
-            "Swap": { "ability": "Spark of Inspiration", "tier": 5 },
+            "Spawner Break": { "ability": "Sundrops", "tier": 0 },
+            "Sneak Bow": { "ability": "Divine Beam", "tier": 5 },
+            "Swap": { "ability": "Spark of Inspiration", "tier": 0 },
             "Lifeline": { "ability": "Eternal Savior", "tier": 5 },
             "Passive": [
                 { "ability": "Enlightenment", "tier": 2 },
@@ -471,29 +474,29 @@ const treePriority = {
             ]
         },
         "Earthbound": {
-            "Combo": { "ability": "Earthen Combos", "tier": 5 },
+            "Combo": { "ability": "Earthen Combos", "tier": 3 },
             "Right": { "ability": "Crushing Earth", "tier": 5 },
-            "Sneak Left": { "ability": "Taunt", "tier": 0 },
-            "Sneak Right": { "ability": "Iron Grip", "tier": 5 },
-            "Spawner Break": { "ability": "Entrench", "tier": 3 },
+            "Sneak Left": { "ability": "Taunt", "tier": 5 },
+            "Sneak Right": { "ability": "Iron Grip", "tier": 2 },
+            "Spawner Break": { "ability": "Entrench", "tier": 5 },
             "Sneak Bow": { "ability": "Earthquake", "tier": 3 },
             "Swap": { "ability": "Earthen Wrath", "tier": 5 },
             "Lifeline": { "ability": "", "tier": 10 },
             "Passive": [
                 { "ability": "Bramble Shell", "tier": 3 },
-                { "ability": "Bulwark", "tier": 2 },
-                { "ability": "Toughness", "tier": 2 }
+                { "ability": "Bulwark", "tier": 1 },
+                { "ability": "Toughness", "tier": 1 }
             ]
         },
         "Flamecaller": {
-            "Combo": { "ability": "Volcanic Combos", "tier": 5 },
+            "Combo": { "ability": "Volcanic Combos", "tier": 3 },
             "Right": { "ability": "Fireball", "tier": 5 },
-            "Sneak Left": { "ability": "Igneous Rune", "tier": 3 },
-            "Sneak Right": { "ability": "Flamestrike", "tier": 5 },
-            "Spawner Break": { "ability": "Flame Spirit", "tier": 3 },
+            "Sneak Left": { "ability": "Igneous Rune", "tier": 5 },
+            "Sneak Right": { "ability": "Flamestrike", "tier": 3 },
+            "Spawner Break": { "ability": "Flame Spirit", "tier": 5 },
             "Sneak Bow": { "ability": "Pyroblast", "tier": 3 },
             "Swap": { "ability": "Volcanic Meteor", "tier": 5 },
-            "Lifeline": { "ability": "Apocalypse", "tier": 2 },
+            "Lifeline": { "ability": "Apocalypse", "tier": 3 },
             "Passive": [
                 { "ability": "Detonation", "tier": 3 },
                 { "ability": "Primordial Mastery", "tier": 3 },
@@ -501,41 +504,41 @@ const treePriority = {
             ]
         },
         "Frostborn": {
-            "Combo": { "ability": "Frigid Combos", "tier": 5 },
+            "Combo": { "ability": "Frigid Combos", "tier": 3 },
             "Right": { "ability": "Ice Lance", "tier": 5 },
-            "Sneak Left": { "ability": "Snowstorm", "tier": 3 },
-            "Sneak Right": { "ability": "Ice Barrier", "tier": 5 },
-            "Spawner Break": { "ability": "Permafrost", "tier": 3 },
+            "Sneak Left": { "ability": "Snowstorm", "tier": 5 },
+            "Sneak Right": { "ability": "Ice Barrier", "tier": 3 },
+            "Spawner Break": { "ability": "Permafrost", "tier": 5 },
             "Sneak Bow": { "ability": "Piercing Cold", "tier": 3 },
             "Swap": { "ability": "Avalanche", "tier": 5 },
             "Lifeline": { "ability": "Cryobox", "tier": 3 },
             "Passive": [
-                { "ability": "Frozen Domain", "tier": 2 },
-                { "ability": "Icebreaker", "tier": 0 }
+                { "ability": "Frozen Domain", "tier": 3 },
+                { "ability": "Icebreaker", "tier": 3 }
             ]
         },
         "Shadowdancer": {
-            "Combo": { "ability": "Dark Combos", "tier": 0 },
-            "Right": { "ability": "Advancing Shadows", "tier": 0 },
+            "Combo": { "ability": "Dark Combos", "tier": 3 },
+            "Right": { "ability": "Advancing Shadows", "tier": 5 },
             "Sneak Left": { "ability": "Cloak of Shadows", "tier": 5 },
-            "Sneak Right": { "ability": "Blade Flurry", "tier": 0 },
+            "Sneak Right": { "ability": "Blade Flurry", "tier": 3 },
             "Spawner Break": { "ability": "Phantom Force", "tier": 5 },
-            "Sneak Bow": { "ability": "Dummy Decoy", "tier": 5 },
-            "Swap": { "ability": "Chaos Dagger", "tier": 0 },
-            "Lifeline": { "ability": "Escape Artist", "tier": 5 },
+            "Sneak Bow": { "ability": "Dummy Decoy", "tier": 3 },
+            "Swap": { "ability": "Chaos Dagger", "tier": 5 },
+            "Lifeline": { "ability": "Escape Artist", "tier": 3 },
             "Passive": [
-                { "ability": "Brutalize", "tier": 0 },
-                { "ability": "Deadly Strike", "tier": 0 },
-                { "ability": "Dethroner", "tier": 0 },
+                { "ability": "Brutalize", "tier": 3 },
+                { "ability": "Deadly Strike", "tier": 3 },
+                { "ability": "Dethroner", "tier": 3 },
                 { "ability": "Shadow Slam", "tier": 3 }
             ]
         },
         "Steelsage": {
-            "Combo": { "ability": "Focused Combos", "tier": 5 },
+            "Combo": { "ability": "Focused Combos", "tier": 3 },
             "Right": { "ability": "Sidearm", "tier": 5 },
-            "Sneak Left": { "ability": "Scrapshot", "tier": 3 },
-            "Sneak Right": { "ability": "Firework Blast", "tier": 5 },
-            "Spawner Break": { "ability": "Precision Strike", "tier": 3 },
+            "Sneak Left": { "ability": "Scrapshot", "tier": 5 },
+            "Sneak Right": { "ability": "Firework Blast", "tier": 3 },
+            "Spawner Break": { "ability": "Precision Strike", "tier": 5 },
             "Sneak Bow": { "ability": "Volley", "tier": 3 },
             "Swap": { "ability": "Gravity Bomb", "tier": 5 },
             "Lifeline": { "ability": "Steel Stallion", "tier": 1 },
@@ -546,16 +549,16 @@ const treePriority = {
             ]
         },
         "Windwalker": {
-            "Combo": { "ability": "Windswept Combos", "tier": 5 },
+            "Combo": { "ability": "Windswept Combos", "tier": 3 },
             "Right": { "ability": "Wind Walk", "tier": 5 },
-            "Sneak Left": { "ability": "Guarding Bolt", "tier": 3 },
-            "Sneak Right": { "ability": "Aeroblast", "tier": 5 },
-            "Spawner Break": { "ability": "Whirlwind", "tier": 2 },
+            "Sneak Left": { "ability": "Guarding Bolt", "tier": 5 },
+            "Sneak Right": { "ability": "Aeroblast", "tier": 3 },
+            "Spawner Break": { "ability": "Whirlwind", "tier": 5 },
             "Sneak Bow": { "ability": "Skyhook", "tier": 0 },
             "Swap": { "ability": "Thundercloud Form", "tier": 5 },
             "Lifeline": { "ability": "Last Breath", "tier": 0 },
             "Passive": [
-                { "ability": "Aeromancy", "tier": 0 },
+                { "ability": "Aeromancy", "tier": 3 },
                 { "ability": "Dodging", "tier": 1 },
                 { "ability": "One with the Wind", "tier": 3 },
                 { "ability": "Restoring Draft", "tier": 2 }
@@ -564,8 +567,8 @@ const treePriority = {
         "Prismatic": {
             "Combo": { "ability": "", "tier": 10 },
             "Right": { "ability": "Solar Ray", "tier": 5 },
-            "Sneak Left": { "ability": "Encore", "tier": 3 },
-            "Sneak Right": { "ability": "Chroma Blade", "tier": 5 },
+            "Sneak Left": { "ability": "Encore", "tier": 5 },
+            "Sneak Right": { "ability": "Chroma Blade", "tier": 3 },
             "Spawner Break": { "ability": "Convergence", "tier": 3 },
             "Sneak Bow": { "ability": "Disco Ball", "tier": 3 },
             "Swap": [
@@ -596,10 +599,10 @@ const treePriority = {
     "Steelsage": {
 
         "Dawnbringer": {
-            "Combo": { "ability": "Soothing Combos", "tier": 5 },
+            "Combo": { "ability": "Soothing Combos", "tier": 3 },
             "Right": { "ability": "Ward of Light", "tier": 5 },
-            "Sneak Left": { "ability": "Radiant Blessing", "tier": 1 },
-            "Sneak Right": { "ability": "Bottled Sunlight", "tier": 5 },
+            "Sneak Left": { "ability": "Radiant Blessing", "tier": 5 },
+            "Sneak Right": { "ability": "Bottled Sunlight", "tier": 1 },
             "Spawner Break": { "ability": "Sundrops", "tier": 3 },
             "Sneak Bow": { "ability": "Divine Beam", "tier": 2 },
             "Swap": { "ability": "Spark of Inspiration", "tier": 5 },
@@ -611,29 +614,29 @@ const treePriority = {
             ]
         },
         "Earthbound": {
-            "Combo": { "ability": "Earthen Combos", "tier": 5 },
+            "Combo": { "ability": "Earthen Combos", "tier": 3 },
             "Right": { "ability": "Crushing Earth", "tier": 5 },
-            "Sneak Left": { "ability": "Taunt", "tier": 0 },
-            "Sneak Right": { "ability": "Iron Grip", "tier": 5 },
+            "Sneak Left": { "ability": "Taunt", "tier": 5 },
+            "Sneak Right": { "ability": "Iron Grip", "tier": 2 },
             "Spawner Break": { "ability": "Entrench", "tier": 3 },
             "Sneak Bow": { "ability": "Earthquake", "tier": 3 },
             "Swap": { "ability": "Earthen Wrath", "tier": 5 },
             "Lifeline": { "ability": "", "tier": 10 },
             "Passive": [
                 { "ability": "Bramble Shell", "tier": 3 },
-                { "ability": "Bulwark", "tier": 2 },
+                { "ability": "Bulwark", "tier": 1 },
                 { "ability": "Toughness", "tier": 2 }
             ]
         },
         "Flamecaller": {
-            "Combo": { "ability": "Volcanic Combos", "tier": 5 },
+            "Combo": { "ability": "Volcanic Combos", "tier": 3 },
             "Right": { "ability": "Fireball", "tier": 5 },
-            "Sneak Left": { "ability": "Igneous Rune", "tier": 3 },
-            "Sneak Right": { "ability": "Flamestrike", "tier": 5 },
+            "Sneak Left": { "ability": "Igneous Rune", "tier": 5 },
+            "Sneak Right": { "ability": "Flamestrike", "tier": 3 },
             "Spawner Break": { "ability": "Flame Spirit", "tier": 3 },
             "Sneak Bow": { "ability": "Pyroblast", "tier": 3 },
             "Swap": { "ability": "Volcanic Meteor", "tier": 5 },
-            "Lifeline": { "ability": "Apocalypse", "tier": 2 },
+            "Lifeline": { "ability": "Apocalypse", "tier": 5 },
             "Passive": [
                 { "ability": "Detonation", "tier": 3 },
                 { "ability": "Primordial Mastery", "tier": 3 },
@@ -641,62 +644,62 @@ const treePriority = {
             ]
         },
         "Frostborn": {
-            "Combo": { "ability": "Frigid Combos", "tier": 5 },
+            "Combo": { "ability": "Frigid Combos", "tier": 3 },
             "Right": { "ability": "Ice Lance", "tier": 5 },
-            "Sneak Left": { "ability": "Snowstorm", "tier": 3 },
-            "Sneak Right": { "ability": "Ice Barrier", "tier": 5 },
+            "Sneak Left": { "ability": "Snowstorm", "tier": 5 },
+            "Sneak Right": { "ability": "Ice Barrier", "tier": 3 },
             "Spawner Break": { "ability": "Permafrost", "tier": 3 },
             "Sneak Bow": { "ability": "Piercing Cold", "tier": 3 },
             "Swap": { "ability": "Avalanche", "tier": 5 },
-            "Lifeline": { "ability": "Cryobox", "tier": 3 },
+            "Lifeline": { "ability": "Cryobox", "tier": 5 },
             "Passive": [
-                { "ability": "Frozen Domain", "tier": 2 },
-                { "ability": "Icebreaker", "tier": 0 }
+                { "ability": "Frozen Domain", "tier": 3 },
+                { "ability": "Icebreaker", "tier": 2 }
             ]
         },
         "Shadowdancer": {
-            "Combo": { "ability": "Dark Combos", "tier": 0 },
-            "Right": { "ability": "Advancing Shadows", "tier": 0 },
+            "Combo": { "ability": "Dark Combos", "tier": 3 },
+            "Right": { "ability": "Advancing Shadows", "tier": 5 },
             "Sneak Left": { "ability": "Cloak of Shadows", "tier": 5 },
-            "Sneak Right": { "ability": "Blade Flurry", "tier": 0 },
-            "Spawner Break": { "ability": "Phantom Force", "tier": 5 },
-            "Sneak Bow": { "ability": "Dummy Decoy", "tier": 5 },
-            "Swap": { "ability": "Chaos Dagger", "tier": 0 },
+            "Sneak Right": { "ability": "Blade Flurry", "tier": 3 },
+            "Spawner Break": { "ability": "Phantom Force", "tier": 3 },
+            "Sneak Bow": { "ability": "Dummy Decoy", "tier": 3 },
+            "Swap": { "ability": "Chaos Dagger", "tier": 5 },
             "Lifeline": { "ability": "Escape Artist", "tier": 5 },
             "Passive": [
-                { "ability": "Brutalize", "tier": 0 },
-                { "ability": "Deadly Strike", "tier": 0 },
-                { "ability": "Dethroner", "tier": 0 },
+                { "ability": "Brutalize", "tier": 3 },
+                { "ability": "Deadly Strike", "tier": 3 },
+                { "ability": "Dethroner", "tier": 2 },
                 { "ability": "Shadow Slam", "tier": 3 }
             ]
         },
         "Steelsage": {
             "Combo": { "ability": "Focused Combos", "tier": 5 },
-            "Right": { "ability": "Sidearm", "tier": 5 },
-            "Sneak Left": { "ability": "Scrapshot", "tier": 3 },
+            "Right": { "ability": "Sidearm", "tier": 0 },
+            "Sneak Left": { "ability": "Scrapshot", "tier": 0 },
             "Sneak Right": { "ability": "Firework Blast", "tier": 5 },
-            "Spawner Break": { "ability": "Precision Strike", "tier": 3 },
-            "Sneak Bow": { "ability": "Volley", "tier": 3 },
-            "Swap": { "ability": "Gravity Bomb", "tier": 5 },
-            "Lifeline": { "ability": "Steel Stallion", "tier": 1 },
+            "Spawner Break": { "ability": "Precision Strike", "tier": 5 },
+            "Sneak Bow": { "ability": "Volley", "tier": 5 },
+            "Swap": { "ability": "Gravity Bomb", "tier": 0 },
+            "Lifeline": { "ability": "Steel Stallion", "tier": 0 },
             "Passive": [
-                { "ability": "Rapid Fire", "tier": 2 },
-                { "ability": "Sharpshooter", "tier": 3 },
-                { "ability": "Split Arrow", "tier": 3 }
+                { "ability": "Rapid Fire", "tier": 0 },
+                { "ability": "Sharpshooter", "tier": 0 },
+                { "ability": "Split Arrow", "tier": 5 }
             ]
         },
         "Windwalker": {
-            "Combo": { "ability": "Windswept Combos", "tier": 5 },
+            "Combo": { "ability": "Windswept Combos", "tier": 3 },
             "Right": { "ability": "Wind Walk", "tier": 5 },
-            "Sneak Left": { "ability": "Guarding Bolt", "tier": 3 },
-            "Sneak Right": { "ability": "Aeroblast", "tier": 5 },
-            "Spawner Break": { "ability": "Whirlwind", "tier": 2 },
+            "Sneak Left": { "ability": "Guarding Bolt", "tier": 5 },
+            "Sneak Right": { "ability": "Aeroblast", "tier": 3 },
+            "Spawner Break": { "ability": "Whirlwind", "tier": 3 },
             "Sneak Bow": { "ability": "Skyhook", "tier": 0 },
             "Swap": { "ability": "Thundercloud Form", "tier": 5 },
-            "Lifeline": { "ability": "Last Breath", "tier": 0 },
+            "Lifeline": { "ability": "Last Breath", "tier": 5 },
             "Passive": [
-                { "ability": "Aeromancy", "tier": 0 },
-                { "ability": "Dodging", "tier": 1 },
+                { "ability": "Aeromancy", "tier": 3 },
+                { "ability": "Dodging", "tier": 2 },
                 { "ability": "One with the Wind", "tier": 3 },
                 { "ability": "Restoring Draft", "tier": 2 }
             ]
@@ -704,10 +707,10 @@ const treePriority = {
         "Prismatic": {
             "Combo": { "ability": "", "tier": 10 },
             "Right": { "ability": "Solar Ray", "tier": 5 },
-            "Sneak Left": { "ability": "Encore", "tier": 3 },
-            "Sneak Right": { "ability": "Chroma Blade", "tier": 5 },
+            "Sneak Left": { "ability": "Encore", "tier": 5 },
+            "Sneak Right": { "ability": "Chroma Blade", "tier": 3 },
             "Spawner Break": { "ability": "Convergence", "tier": 3 },
-            "Sneak Bow": { "ability": "Disco Ball", "tier": 3 },
+            "Sneak Bow": { "ability": "Disco Ball", "tier": 5 },
             "Swap": [
                 { "ability": "Refraction", "tier": 5 },
                 { "ability": "Color Splash", "tier": 5 }
