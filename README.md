@@ -11,7 +11,7 @@ JsMacroにおいて使用できる、CelestialZenithのアビリティ選択help
 6. すべてをEnabledに設定する
 
 ## 概要
-このevent macroはCelesital Zenithでアビリティを選択するときに優先選択するべきアビリティを光らせてくれるものです
+このevent macroはCelesital Zenithでアビリティを選択するときに優先選択するべきアビリティを色でハイライトてくれるものです
 
 アビリティのtier(取る優先順位)を自分の好きなように設定できます
 
