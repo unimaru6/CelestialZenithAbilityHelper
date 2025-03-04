@@ -1,2 +1,2 @@
 # CelestialZenithAbilityHelper
-JsMacroで実装する、CelestialZenithのアビリティ選択helperです
+JsMacroにおいて使用できる、CelestialZenithのアビリティ選択helperです
