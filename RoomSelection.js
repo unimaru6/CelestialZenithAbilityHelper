@@ -59,7 +59,7 @@ Time.sleep(50);
 
 if (event.inventory.getContainerTitle() == "Select the Next Room Type") {
     data = getItemsInContainer(27);
-    Chat.log(data);
+    // Chat.log(data);
 
     for (let item of data) {    //data : containerに含まれる物体名リスト
         for (let i = 0; i < tier.length; i++) {

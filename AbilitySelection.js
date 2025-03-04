@@ -1062,8 +1062,8 @@ if ((event.inventory.getContainerTitle() == "Select an Ability" || event.invento
         // Chat.log(abilities[i][3] != "Passive");
         if (abilities[i][3] != "Passive") {
             for (let j = 0; j < ownTreeList.length; j++) {
-                Chat.log(ownTreeList[j] + ":");
-                Chat.log(treePriority[mainTree][ownTreeList[j]][abilities[i][3]]);
+                // Chat.log(ownTreeList[j] + ":");
+                // Chat.log(treePriority[mainTree][ownTreeList[j]][abilities[i][3]]);
                 let ownTreeAbilityTier = treePriority[mainTree][ownTreeList[j]][abilities[i][3]].tier;  //メインツリー.他所有ツリー(j).トリガー.tier
                 // アビリティがメインアビリティであり、ほかに所有しているツリーの同じトリガーのメインアビリティよりティアが低かった(数値としては高い)時
                 if (ownTreeAbilityTier < abilityTier) {
@@ -1073,13 +1073,13 @@ if ((event.inventory.getContainerTitle() == "Select an Ability" || event.invento
                     }
                     otherAbilityBetter.push(true);
                     flag = 1;
-                    Chat.log("break!");
+                    // Chat.log("break!");
                     break;
                 }
             }
         }
         if (!flag) {
-            Chat.log("flag : false");
+            // Chat.log("flag : false");
             otherAbilityBetter.push(false);
         }
         // 左のアビリティよりティアが高かった時(数値としては低かったとき)

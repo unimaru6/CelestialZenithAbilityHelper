@@ -15,7 +15,7 @@ let treePattern = new RegExp(`^.*\\[Zenith Party\\] You have selected the (${tre
 // let dimensionPattern = new RegExp("^minecraft:zenith\\d*$");
 let dimensionPattern = new RegExp(`^(${dimensionList.join("|")}):zenith\\d*$`);
 
-Chat.log(serverMsg);
+// Chat.log(serverMsg);
 
 if (dimensionPattern.test(dimension)) {
     if (treePattern.test(serverMsg)) {
