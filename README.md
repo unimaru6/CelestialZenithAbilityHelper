@@ -30,6 +30,7 @@ JsMacroにおいて使用できる、CelestialZenithのアビリティ選択help
 &emsp;2 : 欲しいが必須ではない 1より下ランク  
 &emsp;3 : とっても取らなくても影響なし  
 &emsp;5 : 取りたくない  
+&emsp;10 : スキルツリーのトリガーのスキルが存在しない  
 &emsp; **ここで、tierには4を設定しないでください**  
 - 同じtierの場合、メインアビリティ(Right,SneakBow,Lifelineなど)のほうがPassiveアビリティより優先されます
 (優先順位 : main tier0 > passive tier0 > main tier1 > passive tier1)
