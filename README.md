@@ -6,7 +6,7 @@ JsMacroにおいて使用できる、CelestialZenithのアビリティ選択help
 2. このリポジトリのdataフォルダの中のすべてのjsファイルをダウンロードする
 3. (マインクラフトのバージョンの階層)/config/jsMacros/Macros にダウンロードしたファイルを移動させる
 4. JsMacroの設定を開き、上タブのEventsをクリック -> Runの隣の+をクリック -> Fileにダウンロードした各ファイルを設定する
-5. 各ファイルごとのEventsに、TreeSelection.jsはRecvMessage、それ以外はOpenContainerを設定する(下図に例)
+5. 各ファイルごとのEventsに、TreeSelection.jsはRecvMessage、それ以外はOpenContainerを設定する
 ![Image](https://github.com/user-attachments/assets/a52348a8-b39b-478b-9745-d6f7d6b15c90)
 6. すべてをEnabledに設定する
 
@@ -17,8 +17,9 @@ JsMacroにおいて使用できる、CelestialZenithのアビリティ選択help
 
 アビリティを選択するときに、取るべきアビリティを黄色でハイライトし、もし選択肢のどのアビリティをとってもブロックされる(ほかの所持treeに取りたいメインアビリティがある)ときは、ピンク色でハイライトされます
 
+取るアビリティの優先順位(tier)は、自分で設定することができます
 #### Tier設定ルール
-- tierを設定するには、変数treePriorityの"tier"と書かれている部分の数字を変更してください
+- tierを設定するには、AbilitySelection.js -> 変数treePriorityの"tier"と書かれている部分の数字を変更してください
 - 自分のメインツリーごとに異なるtierを設定できます
 - メインツリーはコメントで  
 &emsp;// Shadow ------  
