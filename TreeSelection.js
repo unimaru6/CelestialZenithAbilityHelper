@@ -10,9 +10,12 @@ const serverMsg = event.text.getString();
 const dimension = World.getDimension();
 
 const treeList = ["Shadowdancer", "Flamecaller", "Earthbound", "Windwalker", "Frostborn", "Dawnbringer", "Steelsage"];
-let treePattern = new RegExp(`^\\[Zenith Party\\] You have selected the (${treeList.join("|")}) tree!$`);
-let dimensionPattern = new RegExp("^minecraft:zenith\\d*$");
+const dimensionList = ["minecraft", "monumenta"];
+let treePattern = new RegExp(`^.*\\[Zenith Party\\] You have selected the (${treeList.join("|")}) tree!$`);
+// let dimensionPattern = new RegExp("^minecraft:zenith\\d*$");
+let dimensionPattern = new RegExp(`^(${dimensionList.join("|")}):zenith\\d*$`);
 
+Chat.log(serverMsg);
 
 if (dimensionPattern.test(dimension)) {
     if (treePattern.test(serverMsg)) {
